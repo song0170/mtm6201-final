@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="View details, schedule, location, price, and related programs for Intro to Soccer."
+  >
+
+  <title>Intro to Soccer | Recreation Centre</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <nav
+      class="navbar navbar-expand-lg"
+      aria-label="Main navigation"
+    >
+      <div class="container-fluid px-4">
+        <!-- Logo -->
+        <a
+          class="navbar-brand"
+          href="index.html"
+          aria-label="Recreation Centre home"
+        >
+          <img
+            src="images/logo-100.png"
+            srcset="
+              images/logo-100.png 1x,
+              images/logo-200.png 2x
+            "
+            alt="Recreation Centre"
+            class="site-logo"
+          >
+        </a>
+
+        <!-- Mobile menu button -->
+        <button
+          class="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#mobile-navigation"
+          aria-controls="mobile-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i
+            class="fa-solid fa-bars"
+            aria-hidden="true"
+          ></i>
+        </button>
+
+        <!-- Desktop navigation -->
+        <div class="d-none d-lg-flex ms-auto">
+          <ul class="navbar-nav align-items-lg-center">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="index.html"
+              >
+                Home
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="programs.html"
+                aria-current="page"
+              >
+                Activities &amp; Programs
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+              >
+                Facilities
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+              >
+                About
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-3">
+              <a
+                class="btn btn-outline-primary"
+                href="#"
+              >
+                Sign In
+              </a>
+            </li>
+
+            <li class="nav-item ms-lg-2">
+              <a
+                class="btn btn-primary register-button"
+                href="#"
+              >
+                Register
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile offcanvas navigation -->
+  <div
+    class="offcanvas offcanvas-end mobile-menu"
+    tabindex="-1"
+    id="mobile-navigation"
+    aria-labelledby="mobile-navigation-title"
+  >
+    <div class="offcanvas-header">
+      <h2
+        class="visually-hidden"
+        id="mobile-navigation-title"
+      >
+        Mobile navigation
+      </h2>
+
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close navigation menu"
+      ></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+      <!-- Main mobile navigation -->
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-nav-list list-unstyled mb-0">
+          <li class="mobile-nav-item">
+            <a
+              class="mobile-nav-link"
+              href="index.html"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-house"></i>
+              </span>
+
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a
+              class="mobile-nav-link active"
+              href="programs.html"
+              aria-current="page"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-qrcode"></i>
+              </span>
+
+              <span>Activities &amp; Programs</span>
+            </a>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a
+              class="mobile-nav-link"
+              href="#"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-regular fa-building"></i>
+              </span>
+
+              <span>Facilities</span>
+            </a>
+          </li>
+
+          <li class="mobile-nav-item">
+            <a
+              class="mobile-nav-link"
+              href="#"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-circle-info"></i>
+              </span>
+
+              <span>About</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Account buttons -->
+      <div class="mobile-account-actions">
+        <a
+          class="btn btn-outline-primary w-100"
+          href="#"
+        >
+          Sign In
+        </a>
+
+        <a
+          class="btn btn-primary register-button w-100"
+          href="#"
+        >
+          Register
+        </a>
+      </div>
+
+      <!-- Bottom utility links -->
+      <div class="mobile-menu-footer mt-auto">
+        <ul class="list-unstyled mb-0">
+          <li>
+            <button
+              class="mobile-utility-link w-100"
+              type="button"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-globe"></i>
+              </span>
+
+              <span>Language</span>
+
+              <i
+                class="fa-solid fa-chevron-down ms-auto"
+                aria-hidden="true"
+              ></i>
+            </button>
+          </li>
+
+          <li>
+            <a
+              class="mobile-utility-link"
+              href="#"
+            >
+              <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+              >
+                <i class="fa-regular fa-circle-question"></i>
+              </span>
+
+              <span>Help</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main id="main-content">
+
+    <!-- Program introduction section -->
+    <section
+      class="program-detail-intro-section"
+      aria-labelledby="program-detail-title"
+    >
+      <div class="container-fluid px-4">
+        <a
+          class="back-link"
+          href="programs.html"
+          aria-label="Back to programs"
+        >
+          <i
+            class="fa-solid fa-chevron-left"
+            aria-hidden="true"
+          ></i>
+        </a>
+
+        <h1 id="program-detail-title">
+          Intro to Soccer
+        </h1>
+
+        <img
+          src="images/soccer-large.png"
+          srcset="
+            images/soccer-small.png 400w,
+            images/soccer-large.png 800w
+          "
+          sizes="
+            (min-width: 768px) 720px,
+            100vw
+          "
+          class="program-detail-hero-image"
+          alt="Children playing soccer outdoors"
+        >
+      </div>
+    </section>
+
+    <!-- Program information section -->
+    <section
+      class="program-information-section"
+      aria-labelledby="program-information-title"
+    >
+      <div class="container-fluid px-4">
+        <h2
+          class="visually-hidden"
+          id="program-information-title"
+        >
+          Program information
+        </h2>
+
+        <div class="row g-2">
+          <!-- Age -->
+          <div class="col-3">
+            <article class="program-info-card age-info-card">
+              <i
+                class="fa-regular fa-user"
+                aria-hidden="true"
+              ></i>
+
+              <h3>Age</h3>
+
+              <p>6 - 8</p>
+            </article>
+          </div>
+
+          <!-- Location -->
+          <div class="col-3">
+            <article class="program-info-card location-info-card">
+              <i
+                class="fa-solid fa-location-dot"
+                aria-hidden="true"
+              ></i>
+
+              <h3>Location</h3>
+
+              <p>
+                City Sports<br>
+                Field
+              </p>
+            </article>
+          </div>
+
+          <!-- Schedule -->
+          <div class="col-3">
+            <article class="program-info-card schedule-info-card">
+              <i
+                class="fa-solid fa-calendar-days"
+                aria-hidden="true"
+              ></i>
+
+              <h3>Schedule</h3>
+
+              <p>
+                Sat<br>
+                10:00 AM
+              </p>
+            </article>
+          </div>
+
+          <!-- Price -->
+          <div class="col-3">
+            <article class="program-info-card price-info-card">
+              <i
+                class="fa-solid fa-coins"
+                aria-hidden="true"
+              ></i>
+
+              <h3>Price</h3>
+
+              <p>$85</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Description section -->
+    <section
+      class="program-description-section"
+      aria-labelledby="program-description-title"
+    >
+      <div class="container-fluid px-4">
+        <article class="program-description-card">
+          <h2 id="program-description-title">
+            Description
+          </h2>
+
+          <p>
+            Intro to Soccer introduces children to basic soccer skills
+            through fun games, teamwork, and beginner-friendly drills.
+            This program helps young players build confidence,
+            coordination, and a love for staying active.
+          </p>
+        </article>
+
+        <a
+          class="btn btn-primary register-now-button w-100"
+          href="#"
+        >
+          Register Now
+        </a>
+      </div>
+    </section>
+
+    <!-- Related programs section -->
+    <section
+      class="related-programs-section"
+      aria-labelledby="related-programs-title"
+    >
+      <div class="container-fluid px-4">
+        <h2 id="related-programs-title">
+          Related Programs
+        </h2>
+
+        <div class="row g-3">
+          <!-- Swim lessons -->
+          <div class="col-6">
+            <article class="card related-program-card h-100">
+              <img
+                src="images/swimming-small.png"
+                srcset="
+                  images/swimming-small.png 400w,
+                  images/swimming-large.png 800w
+                "
+                sizes="50vw"
+                class="card-img-top related-program-image"
+                alt="Children attending a swimming lesson"
+              >
+
+              <div class="card-body">
+                <div>
+                  <h3 class="card-title">
+                    Swim Lessons
+                  </h3>
+
+                  <p class="card-text">
+                    Build water confidence.
+                  </p>
+                </div>
+
+                <a
+                  class="related-program-arrow"
+                  href="program-details.html"
+                  aria-label="View Swim Lessons program details"
+                >
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Youth basketball -->
+          <div class="col-6">
+            <article class="card related-program-card h-100">
+              <img
+                src="images/basketball-large.png"
+                srcset="
+                  images/basketball-small.png 400w,
+                  images/basketball-large.png 800w
+                "
+                sizes="50vw"
+                class="card-img-top related-program-image basketball-program-image"
+                alt="Young people playing basketball in a gym"
+              >
+
+              <div class="card-body">
+                <div>
+                  <h3 class="card-title">
+                    Youth Basketball
+                  </h3>
+
+                  <p class="card-text">
+                    Learn teamwork.
+                  </p>
+                </div>
+
+                <a
+                  class="related-program-arrow"
+                  href="program-details.html"
+                  aria-label="View Youth Basketball program details"
+                >
+                  <i
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-fluid px-4">
+      <div class="row text-center g-3">
+        <div class="col-4">
+          <h2 class="footer-heading">
+            Explore
+          </h2>
+
+          <ul class="footer-links list-unstyled">
+            <li>
+              <a href="#">Help</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-4">
+          <h2 class="footer-heading">
+            Support
+          </h2>
+
+          <ul class="footer-links list-unstyled">
+            <li>
+              <a href="#">Registration Info</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-4">
+          <h2 class="footer-heading">
+            Contact
+          </h2>
+
+          <div class="social-links">
+            <a
+              href="#"
+              aria-label="Facebook"
+            >
+              <i
+                class="fa-brands fa-facebook"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
+              <i
+                class="fa-brands fa-instagram"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <a
+              href="#"
+              aria-label="X"
+            >
+              <i
+                class="fa-brands fa-x-twitter"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="copyright">
+        &copy; City of Ottawa
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+
+</html>

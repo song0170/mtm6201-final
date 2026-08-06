@@ -61,7 +61,7 @@
         <a
           class="navbar-brand"
           href="index.html"
-          aria-label="Recreation Centre home"
+          aria-label="Ottawa Recreation home"
         >
           <img
             src="images/logo-100.png"
@@ -72,11 +72,12 @@
             alt="Recreation Centre"
             class="site-logo"
           >
+          <span class="brand-name">Ottawa<br>Recreation</span>
         </a>
 
         <!-- Mobile menu button -->
         <button
-          class="navbar-toggler border-0 shadow-none"
+          class="navbar-toggler border-0 shadow-none shadow-none d-md-none"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#mobile-navigation"
@@ -87,9 +88,9 @@
         </button>
 
         <!-- Desktop navigation -->
-        <div class="d-none d-lg-flex ms-auto">
-            <ul class="navbar-nav align-items-lg-center">
-                <li class="nav-item">
+        <div class="d-none d-md-flex ms-auto">
+            <ul class="navbar-nav align-items-md-center">
+                <li class="nav-item ms-md-3">
                     <a
                         class="nav-link active"
                         href="index.html"
@@ -98,7 +99,7 @@
                         Home
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ms-md-2">
                     <a
                         class="nav-link"
                         href="programs.html"
@@ -123,7 +124,7 @@
                 </li>
                 <li class="nav-item ms-lg-2">
                     <a
-                        class="btn btn-primary register-button"
+                        class="btn register-button"
                         href="#"
                     >
                         Register
@@ -227,7 +228,7 @@
       </a>
 
       <a
-        class="btn btn-primary register-button w-100"
+        class="btn register-button w-100"
         href="#"
       >
         Register
@@ -363,7 +364,8 @@
                 aria-hidden="true"
               ></i>
 
-              <span>Programs</span>
+              <span class="quick-link-title">Programs</span>
+              <span class="quick-link-description">Find classes for all ages.</span>
             </a>
           </div>
 
@@ -378,7 +380,8 @@
                 aria-hidden="true"
               ></i>
 
-              <span>Facilities</span>
+              <span class="quick-link-title">Facilities</span>
+              <span class="quick-link-description">Explore nearby facilities.</span>
             </a>
           </div>
 
@@ -393,7 +396,8 @@
                 aria-hidden="true"
               ></i>
 
-              <span>Schedules</span>
+              <span class="quick-link-title">Schedules</span>
+              <span class="quick-link-description">Check times and sessions.</span>
             </a>
           </div>
 
@@ -408,7 +412,8 @@
                 aria-hidden="true"
               ></i>
 
-              <span>Register</span>
+              <span class="quick-link-title">Register</span>
+              <span class="quick-link-description">Sign up quickly online.</span>
             </a>
           </div>
         </div>
@@ -481,7 +486,7 @@
               <div class="row g-0 align-items-center">
                 <div class="col-auto">
                   <img
-                    src="images/swimming-small.png"
+                    src="images/swimming-large.png"
                     srcset="
                       images/swimming-small.png 400w,
                       images/swimming-large.png 800w
@@ -520,6 +525,75 @@
                     ></i>
                   </a>
                 </div>
+              </div>
+            </article>
+          </div>
+          <!-- Basketball program -->
+          <div class="col-12 col-md-3 d-none d-md-block">
+            <article class="card program-card home-program-card h-100">
+              <img
+                src="images/basketball-small.png"
+                srcset="
+                  images/basketball-small.png 400w,
+                  images/basketball-large.png 800w
+                "
+                sizes="(min-width: 768px) 25vw, 100vw"
+                class="home-program-image"
+                alt="Young people playing basketball"
+              >
+
+              <div class="home-program-overlay">
+                <h3>Youth Basketball</h3>
+
+                <p>
+                  <i class="fa-regular fa-user" aria-hidden="true"></i>
+                  9 - 12
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Ottawa Rec Centre
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                  Wed 6:00 PM
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Dance program -->
+          <div class="col-12 col-md-3 d-none d-md-block">
+            <article class="card program-card home-program-card h-100">
+              <img
+                src="images/dance-small.png"
+                srcset="
+                  images/dance-small.png 400w,
+                  images/dance-large.png 800w
+                "
+                sizes="(min-width: 768px) 25vw, 100vw"
+                class="home-program-image"
+                alt="Older adults participating in a dance class"
+              >
+
+              <div class="home-program-overlay">
+                <h3>Dance</h3>
+
+                <p>
+                  <i class="fa-regular fa-user" aria-hidden="true"></i>
+                  55+
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                  Ottawa Rec Centre
+                </p>
+
+                <p>
+                  <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+                  Thu 1:00 PM
+                </p>
               </div>
             </article>
           </div>
