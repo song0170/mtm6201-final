@@ -55,7 +55,7 @@
   <!-- Header -->
   <header class="site-header">
     <nav
-      class="navbar navbar-expand-lg"
+      class="navbar navbar-expand-md"
       aria-label="Main navigation"
     >
       <div class="container-fluid px-4">
@@ -74,11 +74,12 @@
             alt="Recreation Centre"
             class="site-logo"
           >
+          <span class="brand-name">Ottawa<br>Recreation</span>
         </a>
 
         <!-- Mobile menu button -->
         <button
-          class="navbar-toggler border-0 shadow-none"
+          class="navbar-toggler border-0 shadow-none d-md-none"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#mobile-navigation"
@@ -92,9 +93,9 @@
         </button>
 
         <!-- Desktop navigation -->
-        <div class="d-none d-lg-flex ms-auto">
-          <ul class="navbar-nav align-items-lg-center">
-            <li class="nav-item">
+        <div class="d-none d-md-flex ms-auto">
+          <ul class="navbar-nav align-items-md-center">
+            <li class="nav-item ms-md-3">
               <a
                 class="nav-link"
                 href="index.html"
@@ -103,7 +104,7 @@
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item ms-md-2">
               <a
                 class="nav-link active"
                 href="programs.html"
@@ -131,18 +132,18 @@
               </a>
             </li>
 
-            <li class="nav-item ms-lg-3">
+            <li class="nav-item sign-in-item">
               <a
-                class="btn btn-outline-primary"
+                class="btn btn-outline-primary sign-in-button"
                 href="#"
               >
                 Sign In
               </a>
             </li>
 
-            <li class="nav-item ms-lg-2">
+            <li class="nav-item register-item">
               <a
-                class="btn btn-primary register-button"
+                class="btn register-button"
                 href="#"
               >
                 Register
@@ -308,281 +309,532 @@
       </div>
     </div>
   </div>
-
-  <!-- Main content -->
   <main id="main-content">
 
-    <!-- Program introduction section -->
-    <section
-      class="program-detail-intro-section"
-      aria-labelledby="program-detail-title"
-    >
-      <div class="container-fluid px-4">
-        <a
-          class="back-link"
-          href="programs.html"
-          aria-label="Back to programs"
-        >
-          <i
-            class="fa-solid fa-chevron-left"
-            aria-hidden="true"
-          ></i>
-        </a>
+    <div class="container-fluid px-4">
 
-        <h1 id="program-detail-title">
-          Intro to Soccer
-        </h1>
+      <!-- Back to Programs -->
+      <a
+        class="back-link"
+        href="programs.html"
+        aria-label="Back to programs"
+      >
+        <i
+          class="fa-solid fa-chevron-left d-md-none"
+          aria-hidden="true"
+        ></i>
 
-        <img
-          src="images/soccer-large.png"
-          srcset="
-            images/soccer-small.png 400w,
-            images/soccer-large.png 800w
-          "
-          sizes="
-            (min-width: 768px) 720px,
-            100vw
-          "
-          class="program-detail-hero-image"
-          alt="Children playing soccer outdoors"
-        >
-      </div>
-    </section>
+        <span class="d-none d-md-inline">
+          Back to Programs
+        </span>
+      </a>
 
-    <!-- Program information section -->
-    <section
-      class="program-information-section"
-      aria-labelledby="program-information-title"
-    >
-      <div class="container-fluid px-4">
-        <h2
-          class="visually-hidden"
-          id="program-information-title"
-        >
-          Program information
-        </h2>
 
-        <div class="row g-2">
-          <!-- Age -->
-          <div class="col-3">
-            <article class="program-info-card age-info-card">
-              <i
-                class="fa-regular fa-user"
-                aria-hidden="true"
-              ></i>
+      <h1
+        id="program-detail-title"
+        class="program-detail-title"
+      >
+        Intro to Soccer
+      </h1>
 
-              <h3>Age</h3>
 
-              <p>6 - 8</p>
-            </article>
-          </div>
+      <div class="row program-detail-layout">
 
-          <!-- Location -->
-          <div class="col-3">
-            <article class="program-info-card location-info-card">
-              <i
-                class="fa-solid fa-location-dot"
-                aria-hidden="true"
-              ></i>
+        <!-- Left content -->
+        <div class="col-12 col-md-8">
 
-              <h3>Location</h3>
+          <!-- Program hero -->
+          <section
+            class="program-detail-intro-section"
+            aria-labelledby="program-detail-title"
+          >
+            <div class="program-detail-hero-wrapper">
 
-              <p>
-                City Sports<br>
-                Field
-              </p>
-            </article>
-          </div>
-
-          <!-- Schedule -->
-          <div class="col-3">
-            <article class="program-info-card schedule-info-card">
-              <i
-                class="fa-solid fa-calendar-days"
-                aria-hidden="true"
-              ></i>
-
-              <h3>Schedule</h3>
-
-              <p>
-                Sat<br>
-                10:00 AM
-              </p>
-            </article>
-          </div>
-
-          <!-- Price -->
-          <div class="col-3">
-            <article class="program-info-card price-info-card">
-              <i
-                class="fa-solid fa-coins"
-                aria-hidden="true"
-              ></i>
-
-              <h3>Price</h3>
-
-              <p>$85</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Description section -->
-    <section
-      class="program-description-section"
-      aria-labelledby="program-description-title"
-    >
-      <div class="container-fluid px-4">
-        <article class="program-description-card">
-          <h2 id="program-description-title">
-            Description
-          </h2>
-
-          <p>
-            Intro to Soccer introduces children to basic soccer skills
-            through fun games, teamwork, and beginner-friendly drills.
-            This program helps young players build confidence,
-            coordination, and a love for staying active.
-          </p>
-        </article>
-
-        <a
-          class="btn btn-primary register-now-button w-100"
-          href="#"
-        >
-          Register Now
-        </a>
-      </div>
-    </section>
-
-    <!-- Related programs section -->
-    <section
-      class="related-programs-section"
-      aria-labelledby="related-programs-title"
-    >
-      <div class="container-fluid px-4">
-        <h2 id="related-programs-title">
-          Related Programs
-        </h2>
-
-        <div class="row g-3">
-          <!-- Swim lessons -->
-          <div class="col-6">
-            <article class="card related-program-card h-100">
               <img
-                src="images/swimming-small.png"
+                src="images/soccer-large.png"
                 srcset="
-                  images/swimming-small.png 400w,
-                  images/swimming-large.png 800w
+                  images/soccer-small.png 400w,
+                  images/soccer-large.png 800w
                 "
-                sizes="50vw"
-                class="card-img-top related-program-image"
-                alt="Children attending a swimming lesson"
+                sizes="
+                  (min-width: 768px) 60vw,
+                  100vw
+                "
+                class="program-detail-hero-image"
+                alt="Children playing soccer outdoors"
               >
 
-              <div class="card-body">
-                <div>
-                  <h3 class="card-title">
-                    Swim Lessons
-                  </h3>
-
-                  <p class="card-text">
-                    Build water confidence.
-                  </p>
-                </div>
-
-                <a
-                  class="related-program-arrow"
-                  href="program-details.html"
-                  aria-label="View Swim Lessons program details"
-                >
-                  <i
-                    class="fa-solid fa-chevron-right"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-              </div>
-            </article>
-          </div>
-
-          <!-- Youth basketball -->
-          <div class="col-6">
-            <article class="card related-program-card h-100">
-              <img
-                src="images/basketball-large.png"
-                srcset="
-                  images/basketball-small.png 400w,
-                  images/basketball-large.png 800w
-                "
-                sizes="50vw"
-                class="card-img-top related-program-image basketball-program-image"
-                alt="Young people playing basketball in a gym"
+              <a
+                class="btn btn-primary register-now-button tablet-register-button d-none d-md-inline-flex"
+                href="#"
               >
+                Register Now
+              </a>
 
-              <div class="card-body">
-                <div>
-                  <h3 class="card-title">
-                    Youth Basketball
-                  </h3>
+            </div>
+          </section>
 
-                  <p class="card-text">
-                    Learn teamwork.
-                  </p>
-                </div>
 
-                <a
-                  class="related-program-arrow"
-                  href="program-details.html"
-                  aria-label="View Youth Basketball program details"
-                >
+          <!-- Program information -->
+          <section
+            class="program-information-section"
+            aria-labelledby="program-information-title"
+          >
+
+            <h2
+              class="visually-hidden"
+              id="program-information-title"
+            >
+              Program information
+            </h2>
+
+            <div class="row g-2">
+
+              <!-- Age -->
+              <div class="col-3">
+                <article class="program-info-card age-info-card">
                   <i
-                    class="fa-solid fa-chevron-right"
+                    class="fa-regular fa-user"
                     aria-hidden="true"
                   ></i>
-                </a>
+
+                  <h3>Age</h3>
+                  <p>6 - 8</p>
+                </article>
               </div>
+
+
+              <!-- Location -->
+              <div class="col-3">
+                <article class="program-info-card location-info-card">
+                  <i
+                    class="fa-solid fa-location-dot"
+                    aria-hidden="true"
+                  ></i>
+
+                  <h3>Location</h3>
+
+                  <p>
+                    City Sports<br>
+                    Field
+                  </p>
+                </article>
+              </div>
+
+
+              <!-- Schedule -->
+              <div class="col-3">
+                <article class="program-info-card schedule-info-card">
+                  <i
+                    class="fa-solid fa-calendar-days"
+                    aria-hidden="true"
+                  ></i>
+
+                  <h3>Schedule</h3>
+
+                  <p>
+                    Sat<br>
+                    10:00 AM
+                  </p>
+                </article>
+              </div>
+
+
+              <!-- Price -->
+              <div class="col-3">
+                <article class="program-info-card price-info-card">
+                  <i
+                    class="fa-solid fa-coins"
+                    aria-hidden="true"
+                  ></i>
+
+                  <h3>Price</h3>
+                  <p>$85</p>
+                </article>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- Description -->
+          <section
+            class="program-description-section"
+            aria-labelledby="program-description-title"
+          >
+
+            <article class="program-description-card">
+
+              <h2 id="program-description-title">
+                Description
+              </h2>
+
+              <p>
+                Intro to Soccer introduces children to basic soccer skills
+                through fun games, teamwork, and beginner-friendly drills.
+                This program helps young players build confidence,
+                coordination, and a love for staying active.
+              </p>
+
             </article>
-          </div>
+
+            <!-- Mobile Register button -->
+            <a
+              class="btn btn-primary register-now-button w-100 d-md-none"
+              href="#"
+            >
+              Register Now
+            </a>
+
+          </section>
+
         </div>
+
+
+        <!-- Right side: Related Programs -->
+        <div class="col-12 col-md-4">
+
+          <section
+            class="related-programs-section"
+            aria-labelledby="related-programs-title"
+          >
+
+            <h2 id="related-programs-title">
+              Related Programs
+            </h2>
+          
+          <div class="related-programs-list-mask">
+
+            <div class="row g-3">
+
+              <!-- Swim Lessons -->
+              <div class="col-6 col-md-12">
+
+                <article class="card related-program-card h-100">
+
+                  <img
+                    src="images/swimming-small.png"
+                    srcset="
+                      images/swimming-small.png 400w,
+                      images/swimming-large.png 800w
+                    "
+                    sizes="
+                      (min-width: 768px) 30vw,
+                      50vw
+                    "
+                    class="card-img-top related-program-image"
+                    alt="Children attending a swimming lesson"
+                  >
+
+                  <div class="card-body">
+
+                    <div>
+                      <h3 class="card-title">
+                        Swim Lessons
+                      </h3>
+
+                      <p class="card-text">
+                        Build water confidence.
+                      </p>
+                    </div>
+
+                    <a
+                      class="related-program-arrow d-md-none"
+                      href="program-details.html"
+                      aria-label="View Swim Lessons program details"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+
+                  </div>
+
+                </article>
+              </div>
+
+
+              <!-- Youth Basketball -->
+              <div class="col-6 col-md-12">
+
+                <article class="card related-program-card h-100">
+
+                  <img
+                    src="images/basketball-large.png"
+                    srcset="
+                      images/basketball-small.png 400w,
+                      images/basketball-large.png 800w
+                    "
+                    sizes="
+                      (min-width: 768px) 30vw,
+                      50vw
+                    "
+                    class="card-img-top related-program-image basketball-related-image"
+                    alt="Young people playing basketball in a gym"
+                  >
+
+                  <div class="card-body">
+
+                    <div>
+                      <h3 class="card-title">
+                        Youth Basketball
+                      </h3>
+
+                      <p class="card-text">
+                        Learn teamwork.
+                      </p>
+                    </div>
+
+                    <a
+                      class="related-program-arrow d-md-none"
+                      href="program-details.html"
+                      aria-label="View Youth Basketball program details"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+
+                  </div>
+
+                </article>
+              </div>
+
+
+              <!-- Dance - tablet and desktop -->
+              <div class="col-md-12 d-none d-md-block">
+
+                <article class="card related-program-card h-100">
+
+                  <img
+                    src="images/dance-small.png"
+                    srcset="
+                      images/dance-small.png 400w,
+                      images/dance-large.png 800w
+                    "
+                    sizes="30vw"
+                    class="card-img-top related-program-image"
+                    alt="Older adults participating in a dance class"
+                  >
+
+                  <div class="card-body">
+
+                    <div>
+                      <h3 class="card-title">
+                        Dance
+                      </h3>
+
+                      <p class="card-text">
+                        Move, connect, and have fun.
+                      </p>
+                    </div>
+
+                  </div>
+
+                </article>
+              </div>
+
+
+              <!-- Yoga - tablet and desktop -->
+              <div class="col-md-12 d-none d-md-block">
+
+                <article class="card related-program-card h-100">
+
+                  <img
+                    src="images/yoga-small.png"
+                    srcset="
+                      images/yoga-small.png 400w,
+                      images/yoga-large.png 800w
+                    "
+                    sizes="30vw"
+                    class="card-img-top related-program-image"
+                    alt="People participating in a yoga class"
+                  >
+
+                  <div class="card-body">
+
+                    <div>
+                      <h3 class="card-title">
+                        Yoga
+                      </h3>
+
+                      <p class="card-text">
+                        Stretch, breathe, and relax.
+                      </p>
+                    </div>
+
+                  </div>
+
+                </article>
+              </div>
+
+              <!-- Fitness -->
+              <div class="col-md-12 d-none d-md-block">
+                <article class="card related-program-card">
+                  <img
+                    src="images/fitness-small.png"
+                    srcset="
+                      images/fitness-small.png 400w,
+                      images/fitness-large.png 800w
+                    "
+                    sizes="30vw"
+                    class="card-img-top related-program-image"
+                    alt="People exercising in a fitness class"
+                  >
+                  <div class="card-body">
+                    <div>
+                      <h3 class="card-title">
+                        Fitness
+                      </h3>
+
+                      <p class="card-text">
+                        Build strength and stay active.
+                      </p>
+                    </div>
+
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+            <div class="related-programs-more d-none d-md-flex">
+
+              <button
+                class="related-programs-more-button"
+                id="related-programs-toggle"
+                type="button"
+                aria-label="Show more related programs"
+                aria-expanded="false"
+              >
+                <i
+                  class="fa-solid fa-chevron-down"
+                  aria-hidden="true"
+                ></i>
+              </button>
+
+            </div>
+
+          </section>
+
+        </div>
+
       </div>
-    </section>
+
+    </div>
+
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container-fluid px-4">
-      <div class="row text-center g-3">
-        <div class="col-4">
+
+      <div class="row g-3">
+
+        <!-- Brand -->
+        <div class="col-12 col-md-3 footer-brand-area">
+
+          <div class="footer-brand">
+            <img
+              src="images/logo-100.png"
+              srcset="
+                images/logo-100.png 1x,
+                images/logo-200.png 2x
+              "
+              class="footer-logo"
+              alt="Ottawa Recreation"
+            >
+
+            <span class="footer-brand-name">
+              Ottawa<br>
+              Recreation
+            </span>
+          </div>
+
+          <p class="footer-description">
+            Connecting our community<br>
+            through recreation.
+          </p>
+
+        </div>
+
+
+        <!-- Explore -->
+        <div class="col-4 col-md-3 footer-column">
+
           <h2 class="footer-heading">
             Explore
           </h2>
 
           <ul class="footer-links list-unstyled">
+
             <li>
-              <a href="#">Help</a>
+              <a href="programs.html">
+                Activities &amp; Programs
+              </a>
             </li>
+
+            <li>
+              <a href="#">
+                Facilities
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Help
+              </a>
+            </li>
+
           </ul>
+
         </div>
 
-        <div class="col-4">
+
+        <!-- Support -->
+        <div class="col-4 col-md-3 footer-column">
+
           <h2 class="footer-heading">
             Support
           </h2>
 
           <ul class="footer-links list-unstyled">
+
             <li>
-              <a href="#">Registration Info</a>
+              <a href="#">
+                FAQs
+              </a>
             </li>
+
+            <li>
+              <a href="#">
+                Contact Us
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Registration Info
+              </a>
+            </li>
+
           </ul>
+
         </div>
 
-        <div class="col-4">
+
+        <!-- Connect -->
+        <div class="col-4 col-md-3 footer-column">
+
           <h2 class="footer-heading">
-            Contact
+            Connect
           </h2>
 
           <div class="social-links">
+
             <a
               href="#"
               aria-label="Facebook"
@@ -612,13 +864,18 @@
                 aria-hidden="true"
               ></i>
             </a>
+
           </div>
+
         </div>
+
       </div>
+
 
       <p class="copyright">
         &copy; City of Ottawa
       </p>
+
     </div>
   </footer>
 
@@ -626,6 +883,33 @@
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   ></script>
-</body>
+
+  <script>
+    const relatedProgramsToggle =
+      document.getElementById("related-programs-toggle");
+
+    const relatedProgramsList =
+      document.querySelector(".related-programs-list-mask");
+
+    if (relatedProgramsToggle && relatedProgramsList) {
+      relatedProgramsToggle.addEventListener("click", function () {
+
+        const isExpanded =
+          relatedProgramsList.classList.toggle("is-expanded");
+
+        relatedProgramsToggle.classList.toggle(
+          "is-expanded",
+          isExpanded
+        );
+
+        relatedProgramsToggle.setAttribute(
+          "aria-expanded",
+          isExpanded
+        );
+
+      });
+    }
+  </script>
+  </body>
 
 </html>

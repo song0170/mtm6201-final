@@ -56,7 +56,7 @@
   <!-- Header -->
   <header class="site-header">
     <nav
-      class="navbar navbar-expand-lg"
+      class="navbar navbar-expand-md"
       aria-label="Main navigation"
     >
       <div class="container-fluid px-4">
@@ -75,11 +75,12 @@
             alt="Recreation Centre"
             class="site-logo"
           >
+          <span class="brand-name">Ottawa<br>Recreation</span>
         </a>
 
         <!-- Mobile menu button -->
         <button
-          class="navbar-toggler border-0 shadow-none"
+          class="navbar-toggler border-0 shadow-none d-md-none"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#mobile-navigation"
@@ -93,9 +94,9 @@
         </button>
 
         <!-- Desktop navigation -->
-        <div class="d-none d-lg-flex ms-auto">
-          <ul class="navbar-nav align-items-lg-center">
-            <li class="nav-item">
+        <div class="d-none d-md-flex ms-auto">
+          <ul class="navbar-nav align-items-md-center">
+            <li class="nav-item ms-md-3">
               <a
                 class="nav-link"
                 href="index.html"
@@ -104,7 +105,7 @@
               </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item ms-md-2">
               <a
                 class="nav-link active"
                 href="programs.html"
@@ -132,18 +133,18 @@
               </a>
             </li>
 
-            <li class="nav-item ms-lg-3">
+            <li class="nav-item sign-in-item">
               <a
-                class="btn btn-outline-primary"
+                class="btn btn-outline-primary sign-in-button"
                 href="#"
               >
                 Sign In
               </a>
             </li>
 
-            <li class="nav-item ms-lg-2">
+            <li class="nav-item register-item">
               <a
-                class="btn btn-primary register-button"
+                class="btn register-button"
                 href="#"
               >
                 Register
@@ -319,46 +320,80 @@
       aria-labelledby="programs-page-title"
     >
       <div class="container-fluid px-4">
+
         <h1 id="programs-page-title">
           Programs
         </h1>
 
-        <form
-          class="program-search-form"
-          role="search"
-          action="programs.html"
-          method="get"
-        >
-          <label
-            class="visually-hidden"
-            for="program-search"
-          >
-            Search programs
-          </label>
+        <p class="programs-intro-text">
+          Find activities and programs for all ages and interests across Ottawa.
+        </p>
 
-          <div class="input-group">
-            <span
-              class="input-group-text"
-              aria-hidden="true"
-            >
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
+        <div class="row g-3 align-items-center programs-search-row">
 
-            <input
-              class="form-control"
-              type="search"
-              id="program-search"
-              name="search"
-              placeholder="Search"
+          <!-- Search -->
+          <div class="col-12 col-md-9">
+
+            <form
+              class="program-search-form"
+              role="search"
+              action="programs.html"
+              method="get"
             >
+              <label
+                class="visually-hidden"
+                for="program-search"
+              >
+                Search programs
+              </label>
+
+              <div class="input-group">
+
+                <span
+                  class="input-group-text"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+
+                <input
+                  class="form-control"
+                  type="search"
+                  id="program-search"
+                  name="search"
+                  placeholder="Search"
+                >
+
+              </div>
+            </form>
+
           </div>
-        </form>
+
+          <!-- Tablet filter button -->
+          <div class="col-md-3 d-none d-md-block">
+
+            <button
+              class="btn program-filter-button tablet-filter-button w-100"
+              type="button"
+            >
+              <i
+                class="fa-solid fa-filter"
+                aria-hidden="true"
+              ></i>
+
+              <span>Filter</span>
+            </button>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
 
     <!-- Filters section -->
     <section
-      class="program-filter-section"
+      class="program-filter-section d-md-none"
       aria-labelledby="filters-title"
     >
       <div class="container-fluid px-4">
@@ -433,6 +468,144 @@
       </div>
     </section>
 
+    <!-- Tablet program filters -->
+    <section
+      class="tablet-program-filters d-none d-md-block"
+      aria-label="Program filter options"
+    >
+      <div class="container-fluid px-4">
+
+        <div class="d-flex tablet-filter-options">
+
+          <label
+            class="visually-hidden"
+            for="tablet-age-filter"
+          >
+            Age
+          </label>
+
+          <select
+            class="form-select tablet-filter-select"
+            id="tablet-age-filter"
+          >
+            <option selected>Age</option>
+            <option>Ages 4-6</option>
+            <option>Ages 7-12</option>
+            <option>Ages 13-17</option>
+            <option>Ages 18+</option>
+            <option>Ages 55+</option>
+          </select>
+
+
+          <label
+            class="visually-hidden"
+            for="tablet-category-filter"
+          >
+            Category
+          </label>
+
+          <select
+            class="form-select tablet-filter-select"
+            id="tablet-category-filter"
+          >
+            <option selected>Category</option>
+            <option>Sports</option>
+            <option>Swimming</option>
+            <option>Dance</option>
+            <option>Fitness</option>
+          </select>
+
+
+          <label
+            class="visually-hidden"
+            for="tablet-location-filter"
+          >
+            Location
+          </label>
+
+          <select
+            class="form-select tablet-filter-select"
+            id="tablet-location-filter"
+          >
+            <option selected>Location</option>
+            <option>City Sports Field</option>
+            <option>Ottawa Rec Centre</option>
+          </select>
+
+
+          <label
+            class="visually-hidden"
+            for="tablet-day-filter"
+          >
+            Day
+          </label>
+
+          <select
+            class="form-select tablet-filter-select"
+            id="tablet-day-filter"
+          >
+            <option selected>Day</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Saturday</option>
+          </select>
+
+        </div>
+
+      </div>
+    </section>
+
+
+<!-- Tablet results controls -->
+<section
+  class="program-results-controls d-none d-md-block"
+  aria-label="Program results controls"
+>
+  <div class="container-fluid px-4">
+
+    <div class="d-flex justify-content-between align-items-center">
+
+      <p class="program-result-count mb-0">
+        55 Results
+      </p>
+
+      <div class="program-view-options">
+
+        <span>View:</span>
+
+        <button
+          class="program-view-button active"
+          type="button"
+          aria-label="Grid view"
+          aria-pressed="true"
+        >
+          <i
+            class="fa-solid fa-table-cells"
+            aria-hidden="true"
+          ></i>
+        </button>
+
+        <button
+          class="program-view-button"
+          type="button"
+          aria-label="List view"
+          aria-pressed="false"
+        >
+          <i
+            class="fa-solid fa-list"
+            aria-hidden="true"
+          ></i>
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
     <!-- Programs list section -->
     <section
       class="program-list-section"
@@ -449,77 +622,78 @@
         <div class="row g-3">
 
           <!-- Soccer -->
-          <div class="col-12">
-            <article class="card program-list-card">
-              <div class="row g-0 align-items-center flex-nowrap">
-                <div class="col-auto">
-                  <img
-                    src="images/soccer-small-program-card.png"
-                    srcset="
-                      images/soccer-small.png 400w,
-                      images/soccer-large.png 800w
-                    "
-                    sizes="116px"
-                    class="program-list-image"
-                    alt="Children playing soccer outdoors"
-                  >
-                </div>
+          <div class="col-12 col-md-6">
+              <article class="card program-list-card position-relative">
+                <div class="row g-0 align-items-center flex-nowrap">
+                  <div class="col-auto">
+                    <img
+                      src="images/soccer-small-program-card.png"
+                      srcset="
+                        images/soccer-small.png 400w,
+                        images/soccer-large.png 800w
+                      "
+                      sizes="116px"
+                      class="program-list-image"
+                      alt="Children playing soccer outdoors"
+                    >
+                  </div>
 
-                <div class="col">
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Intro to Soccer
-                    </h3>
+                  <div class="col">
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        <a
+                          href="program-details.html"
+                          class="stretched-link text-reset text-decoration-none"
+                        >
+                          Intro to Soccer
+                        </a>
+                      </h3>
 
-                    <ul class="program-details-list list-unstyled">
-                      <li>
-                        <i
-                          class="fa-regular fa-user"
-                          aria-hidden="true"
-                        ></i>
+                      <ul class="program-details-list list-unstyled">
+                        <li>
+                          <i
+                            class="fa-regular fa-user"
+                            aria-hidden="true"
+                          ></i>
 
-                        <span>6 - 8</span>
-                      </li>
+                          <span>6 - 8</span>
+                        </li>
 
-                      <li>
-                        <i
-                          class="fa-solid fa-location-dot"
-                          aria-hidden="true"
-                        ></i>
+                        <li>
+                          <i
+                            class="fa-solid fa-location-dot"
+                            aria-hidden="true"
+                          ></i>
 
-                        <span>City Sports Field</span>
-                      </li>
+                          <span>City Sports Field</span>
+                        </li>
 
-                      <li>
-                        <i
-                          class="fa-solid fa-calendar-days"
-                          aria-hidden="true"
-                        ></i>
+                        <li>
+                          <i
+                            class="fa-solid fa-calendar-days"
+                            aria-hidden="true"
+                          ></i>
 
-                        <span>Sat 10:00 AM</span>
-                      </li>
-                    </ul>
+                          <span>Sat 10:00 AM</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="col-auto d-md-none">
+                    <span class="program-list-arrow">
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
                   </div>
                 </div>
-
-                <div class="col-auto">
-                  <a
-                    class="program-list-arrow"
-                    href="program-details.html"
-                    aria-label="View Intro to Soccer program details"
-                  >
-                    <i
-                      class="fa-solid fa-chevron-right"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
           </div>
 
           <!-- Swimming -->
-          <div class="col-12">
+          <div class="col-12 col-md-6">
             <article class="card program-list-card">
               <div class="row g-0 align-items-center flex-nowrap">
                 <div class="col-auto">
@@ -572,7 +746,7 @@
                   </div>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto d-md-none">
                   <a
                     class="program-list-arrow"
                     href="program-details.html"
@@ -589,7 +763,7 @@
           </div>
 
           <!-- Basketball -->
-          <div class="col-12">
+          <div class="col-12 col-md-6">
             <article class="card program-list-card">
               <div class="row g-0 align-items-center flex-nowrap">
                 <div class="col-auto">
@@ -642,7 +816,7 @@
                   </div>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto d-md-none">
                   <a
                     class="program-list-arrow"
                     href="program-details.html"
@@ -659,7 +833,7 @@
           </div>
 
           <!-- Dance -->
-          <div class="col-12">
+          <div class="col-12 col-md-6">
             <article class="card program-list-card">
               <div class="row g-0 align-items-center flex-nowrap">
                 <div class="col-auto">
@@ -712,7 +886,7 @@
                   </div>
                 </div>
 
-                <div class="col-auto">
+                <div class="col-auto d-md-none">
                   <a
                     class="program-list-arrow"
                     href="program-details.html"
@@ -727,42 +901,265 @@
               </div>
             </article>
           </div>
+
+          <!-- Yoga - tablet and desktop only -->
+          <div class="col-md-6 d-none d-md-block">
+
+            <article class="card program-list-card">
+
+              <div class="row g-0 align-items-center flex-nowrap">
+
+                <div class="col-auto">
+                  <img
+                    src="images/yoga-small.png"
+                    srcset="
+                      images/yoga-small.png 400w,
+                      images/yoga-large.png 800w
+                    "
+                    sizes="150px"
+                    class="program-list-image"
+                    alt="People participating in a yoga class"
+                  >
+                </div>
+
+                <div class="col">
+
+                  <div class="card-body">
+
+                    <h3 class="card-title">
+                      Yoga
+                    </h3>
+
+                    <ul class="program-details-list list-unstyled">
+
+                      <li>
+                        <i
+                          class="fa-regular fa-user"
+                          aria-hidden="true"
+                        ></i>
+                        <span>18+</span>
+                      </li>
+
+                      <li>
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Ottawa Rec Centre</span>
+                      </li>
+
+                      <li>
+                        <i
+                          class="fa-solid fa-calendar-days"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Mon 7:00 PM</span>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+
+              </div>
+            </article>
+            </div>
+
+          <!-- Fitness - tablet and desktop only -->
+          <div class="col-md-6 d-none d-md-block">
+
+            <article class="card program-list-card">
+
+              <div class="row g-0 align-items-center flex-nowrap">
+
+                <div class="col-auto">
+                  <img
+                    src="images/fitness-small.png"
+                    srcset="
+                      images/fitness-small.png 400w,
+                      images/fitness-large.png 800w
+                    "
+                    sizes="150px"
+                    class="program-list-image"
+                    alt="People exercising in a fitness class"
+                  >
+                </div>
+
+                <div class="col">
+
+                  <div class="card-body">
+
+                    <h3 class="card-title">
+                      Fitness
+                    </h3>
+
+                    <ul class="program-details-list list-unstyled">
+
+                      <li>
+                        <i
+                          class="fa-regular fa-user"
+                          aria-hidden="true"
+                        ></i>
+                        <span>18+</span>
+                      </li>
+
+                      <li>
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Ottawa Rec Centre</span>
+                      </li>
+
+                      <li>
+                        <i
+                          class="fa-solid fa-calendar-days"
+                          aria-hidden="true"
+                        ></i>
+                        <span>Daily 6:00 PM</span>
+                      </li>
+
+                    </ul>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </article>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+    <!-- Tablet pagination -->
+    <nav
+      class="program-pagination d-none d-md-flex"
+      aria-label="Programs pagination"
+    >
+
+      <a
+        class="pagination-arrow disabled"
+        href="#"
+        aria-label="Previous page"
+        aria-disabled="true"
+      >
+        <i
+          class="fa-solid fa-chevron-left"
+          aria-hidden="true"
+        ></i>
+      </a>
+
+      <a
+        class="pagination-number active"
+        href="#"
+        aria-current="page"
+      >
+        1
+      </a>
+
+      <a class="pagination-number" href="#">2</a>
+      <a class="pagination-number" href="#">3</a>
+      <a class="pagination-number" href="#">4</a>
+      <a class="pagination-number" href="#">5</a>
+
+      <a
+        class="pagination-arrow"
+        href="#"
+        aria-label="Next page"
+      >
+        <i
+          class="fa-solid fa-chevron-right"
+          aria-hidden="true"
+        ></i>
+      </a>
+
+    </nav>
   </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container-fluid px-4">
-      <div class="row text-center g-3">
-        <div class="col-4">
+
+      <div class="row g-3">
+
+        <!-- Tablet footer brand -->
+        <div class="col-12 col-md-3 footer-brand-area">
+          <div class="footer-brand">
+            <img
+              src="images/logo-100.png"
+              srcset="
+                images/logo-100.png 1x,
+                images/logo-200.png 2x
+              "
+              class="footer-logo"
+              alt=""
+            >
+
+            <span class="footer-brand-name">
+              Ottawa<br>
+              Recreation
+            </span>
+          </div>
+
+          <p class="footer-description">
+            Connecting our community<br>
+            through recreation.
+          </p>
+        </div>
+
+        <!-- Explore -->
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
             Explore
           </h2>
 
           <ul class="footer-links list-unstyled">
             <li>
-              <a href="#">Help</a>
+              <a href="programs.html">
+                Activities &amp; Programs
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Facilities
+              </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-4">
+        <!-- Support -->
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
             Support
           </h2>
 
           <ul class="footer-links list-unstyled">
             <li>
-              <a href="#">Registration Info</a>
+              <a href="#">
+                FAQs
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Contact Us
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Registration Info
+              </a>
             </li>
           </ul>
         </div>
 
-        <div class="col-4">
+        <!-- Connect -->
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
-            Contact
+            Connect
           </h2>
 
           <div class="social-links">
@@ -797,11 +1194,13 @@
             </a>
           </div>
         </div>
+
       </div>
 
       <p class="copyright">
         &copy; City of Ottawa
       </p>
+
     </div>
   </footer>
 

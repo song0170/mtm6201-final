@@ -232,21 +232,17 @@ button:focus-visible,
 
 /* Register button exception */
 .register-button {
-    color: #ffffff;
-    background-color: #3276ac;
-    border-color: #3276ac;
+  color: #ffffff;
+  background-color: #3276ac;
+  border-color: #3276ac;
 }
 
 .register-button:hover,
 .register-button:focus-visible,
-.register-button:active
-.register-button.btn-primary:hover,
-.register-button.btn-primary:focus-visible,
-.register-button.btn-primary:active
-.register-button.btn-primary.show {
-    color: #ffffff;
-    background-color: #1d496c;
-    border-color: #1d496c;
+.register-button:active {
+  color: #ffffff;
+  background-color: #1d496c;
+  border-color: #1d496c;
 }
 
 
@@ -275,6 +271,7 @@ button:focus-visible,
   align-items: center;
   padding: 0;
   margin: 0;
+  flex-shrink: 0;
 }
 
 .site-logo {
@@ -807,6 +804,11 @@ button:focus-visible,
   box-shadow: 0 0 0 0.2rem rgba(50, 118, 172, 0.2);
 }
 
+.program-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
 
 /* Program list */
 .program-list-section {
@@ -1231,6 +1233,10 @@ button:focus-visible,
   font-weight: 600;
 }
 
+.footer-brand-area {
+  display: none;
+}
+
 .footer-links {
   margin-bottom: 0;
 }
@@ -1282,6 +1288,12 @@ button:focus-visible,
     height: 89px;
   }
 
+  .site-header .container-fluid {
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: center;
+  }
+
   .site-logo {
     width: 52px;
     height: 52px;
@@ -1289,6 +1301,7 @@ button:focus-visible,
 
   .navbar-brand {
     gap: 12px;
+    flex-shrink: 0;
   }
 
   .brand-name {
@@ -1301,6 +1314,9 @@ button:focus-visible,
 
   .navbar-nav {
     gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
   .navbar-nav .nav-link {
@@ -1318,11 +1334,20 @@ button:focus-visible,
   }
 
   .navbar-nav .btn {
-    min-height: 28px;
-    padding: 5px 14px;
+    width: 78px;
+    height: 32px;
+    min-height: 32px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
     font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
   }
-
+  
+  .sign-in-item {
+    margin-right: -10px;
+  }
 
   /* Hero */
   .hero-section {
@@ -1334,54 +1359,61 @@ button:focus-visible,
 
   .hero-section::before {
     content: "";
-    width: 43%;
-    height: 251px;
     position: absolute;
-    top: 24px;
+    top: 26px;
     right: var(--page-padding);
-    background-image:
-      linear-gradient(
+    width: 48%;
+    height: 251px;
+    background-image: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0) 72%,
-        rgba(255, 255, 255, 0.85) 100%
+        rgba(255, 255, 255, 0) 82%,
+        rgba(255, 255, 255, 0.9) 96%,
+        rgba(255, 255, 255, 1) 100%
       ),
       url("../images/hero-large.png");
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
     border-radius: 10px;
   }
 
   .hero-overlay {
     min-height: 360px;
-    padding-top: 28px;
-    padding-bottom: 76px;
-    align-items: flex-start;
+    padding-top: 32px;
+    padding-bottom: 34px;
     background: transparent;
   }
 
-  .hero-section .row {
-    width: 100%;
+  .hero-overlay .container-fluid {
+    position: relative;
+    z-index: 1;
   }
 
-  .hero-section .col-12 {
-    width: 50%;
+  .hero-overlay .row {
+    min-height: 251px;
+    align-items: flex-start;
+  }
+
+  .hero-overlay .col-12 {
+    max-width: none;
+    width: 46%;
   }
 
   .hero-section h1 {
-    max-width: 390px;
+    max-width: 100%;
     margin-bottom: 16px;
     color: var(--color-text);
     font-size: 36px;
     font-weight: 700;
-    line-height: 1.45;
+    line-height: 1.35;
   }
 
   .hero-section p {
-    max-width: 380px;
+    max-width: 100%;
     margin-bottom: 16px;
     color: var(--color-text);
     font-size: 18px;
+    font-weight: 400;
     line-height: 1.45;
   }
 
@@ -1389,13 +1421,14 @@ button:focus-visible,
     width: 190px;
     min-height: 45px;
     padding: 0;
+    font-size: 16px;
   }
+
 
 
   /* Search */
   .search-section {
-    margin-top: -55px;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   .search-form {
@@ -1429,14 +1462,13 @@ button:focus-visible,
     --bs-gutter-y: 0;
   }
 
-  .quick-links-section .col-6 {
-    width: 25%;
-  }
-
   .quick-link-card {
+    width: 100%;
+    height: 174px;
     min-height: 174px;
-    padding: 25px 19px 11px;
+    padding: 25px 12px 14px;
     flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
     gap: 9px;
     text-align: center;
@@ -1456,6 +1488,7 @@ button:focus-visible,
   .quick-link-description {
     display: block;
     max-width: 135px;
+    margin-inline: auto;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.35;
@@ -1477,25 +1510,27 @@ button:focus-visible,
     --bs-gutter-y: 0;
   }
 
-  .popular-programs-section .col-12 {
-    width: 25%;
-  }
-
-  .home-program-card,
-  .program-card {
-    min-height: 160px;
+  .home-program-card {
+    width:100%;
+    height: 220px;
+    min-height: 220px;
     position: relative;
     overflow: hidden;
     border: 1px solid var(--color-blue-dark);
     border-radius: 8px;
   }
 
-  .home-program-image,
-  .program-card .program-image {
+  .home-program-image {
+    position: absolute;
+    inset: 0;
+
     width: 100%;
-    height: 160px;
+    height: 100%;
     margin: 0;
+
     object-fit: cover;
+    object-position: center;
+    
     border-radius: 0;
   }
 
@@ -1504,13 +1539,13 @@ button:focus-visible,
     right: 0;
     bottom: 0;
     left: 0;
-    padding: 30px 9px 8px;
+    padding: 42px 9px 9px;
     color: var(--color-white);
     background:
       linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0.82)
+        rgba(0, 0, 0.7, 0.9)
       );
   }
 
@@ -1532,6 +1567,258 @@ button:focus-visible,
     width: 14px;
   }
 
+  /* ==================================================
+     Tablet Activities & Programs page
+  ================================================== */
+
+  /* Intro */
+  .programs-intro-section {
+    padding-top: 26px;
+  }
+
+  .programs-intro-section h1 {
+    margin-bottom: 8px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .programs-intro-text {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+
+  /* Search + Filter */
+  .programs-search-row {
+    --bs-gutter-x: 16px;
+  }
+
+  .program-search-form .input-group,
+  .program-search-form .input-group-text,
+  .program-search-form .form-control {
+    height: 44px;
+  }
+
+  .program-search-form .input-group-text {
+    padding-left: 12px;
+    font-size: 1.3rem;
+  }
+
+  .program-search-form .form-control {
+    font-size: 14px;
+  }
+
+  .tablet-filter-button {
+    height: 44px;
+    min-height: 44px;
+    padding: 0;
+    gap: 9px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .tablet-filter-button i {
+    font-size: 1.15rem;
+  }
+
+
+  /* Filter dropdown row */
+  .tablet-program-filters {
+    padding-top: 18px;
+  }
+
+  .tablet-filter-options {
+    gap: 18px;
+    align-items: center;
+  }
+
+  .tablet-filter-select {
+    width: auto;
+    height: 44px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 12px;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-blue);
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  #tablet-age-filter {
+    width: 120px;
+  }
+
+  #tablet-category-filter {
+    width: 150px;
+  }
+
+  #tablet-location-filter {
+    width: 135px;
+  }
+
+  #tablet-day-filter {
+    width: 125px;
+  }
+
+  .tablet-filter-select:hover,
+  .tablet-filter-select:focus {
+    border-color: var(--color-blue-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  }
+
+
+  /* Results / View */
+  .program-results-controls {
+    padding-top: 30px;
+    padding-bottom: 14px;
+  }
+
+  .program-result-count {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .program-view-options {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .program-view-button {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue);
+    background: transparent;
+    border: 0;
+    font-size: 1.25rem;
+  }
+
+  .program-view-button.active {
+    color: var(--color-blue);
+  }
+
+  .program-view-button:hover,
+  .program-view-button:focus-visible {
+    color: var(--color-blue-dark);
+  }
+
+
+  /* Program grid */
+  .program-list-section {
+    padding-bottom: 24px;
+  }
+
+  .program-list-section > .container-fluid > .row {
+    --bs-gutter-x: 28px;
+    --bs-gutter-y: 20px;
+  }
+
+  .program-list-card {
+    width: 100%;
+    height: 164px;
+    min-height: 164px;
+    border-radius: 10px;
+  }
+
+  .program-list-card > .row {
+    height: 164px;
+    min-height: 164px;
+    align-items: center;
+  }
+
+  .program-list-image {
+    width: 150px;
+    height: 142px;
+    margin-left: 8px;
+    position: relative;
+    top: 5px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .program-list-card .card-body {
+    padding: 14px 8px 10px 14px;
+  }
+
+  .program-list-card .card-title {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .program-details-list li {
+    min-height: 27px;
+    gap: 9px;
+    font-size: 14px;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .program-details-list i {
+    width: 15px;
+    min-width: 15px;
+    font-size: 0.85rem;
+  }
+
+
+  /* Pagination */
+  .program-pagination {
+    margin-top: 0;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .pagination-number,
+  .pagination-arrow {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .pagination-number.active {
+    background-color: var(--color-light-background);
+    border-color: var(--color-blue);
+  }
+
+  .pagination-arrow {
+    color: var(--color-blue);
+    border-color: var(--color-blue);
+  }
+
+  .pagination-arrow.disabled {
+    color: #cfd8de;
+    border-color: #cfd8de;
+    pointer-events: none;
+  }
+
+  .pagination-number:hover,
+  .pagination-number:focus-visible,
+  .pagination-arrow:hover,
+  .pagination-arrow:focus-visible {
+    background-color: #aeb8bf;
+  }
 
   /* Footer */
   .site-footer {
@@ -1540,20 +1827,45 @@ button:focus-visible,
   }
 
   .site-footer .row {
+    --bs-gutter-x: 12px;
     align-items: flex-start;
     text-align: left !important;
   }
 
-  .site-footer .row > div {
-    width: 20%;
-  }
-
-  .site-footer .row > div:first-child {
-    width: 40%;
-  }
-
   .footer-brand-area {
     display: block;
+    padding-right: 0;
+  }
+
+  .footer-column {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .footer-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+  }
+
+  .footer-brand-name {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .footer-description {
+    margin: 18px 0 0;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.4;
   }
 
   .footer-heading {
@@ -1578,6 +1890,367 @@ button:focus-visible,
   .copyright {
     margin-top: 28px;
     font-size: 9px;
+  }
+
+  /* Related Programs clipped list */
+  .related-programs-list-mask {
+    position: relative;
+    height: 710px;
+    overflow: hidden;
+  }
+
+  /* Related Programs viewport */
+  .related-programs-list-mask {
+    position: relative;
+    height: 710px;
+    overflow: hidden;
+  }
+
+  /* Card list moves vertically */
+  .related-programs-list-mask .row {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.45s ease;
+  }
+
+
+  /* Bottom fade - initial state */
+  .related-programs-list-mask::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    height: 105px;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.7) 55%,
+      #ffffff 100%
+    );
+
+    transition: opacity 0.3s ease;
+  }
+
+
+  /* Top fade - hidden initially */
+  .related-programs-list-mask::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+    height: 90px;
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.75) 35%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+
+  /* After clicking arrow */
+  .related-programs-list-mask.is-expanded .row {
+    transform: translateY(-125px);
+  }
+
+
+  /* Swimming card fades into the top */
+  .related-programs-list-mask.is-expanded::before {
+    opacity: 1;
+  }
+
+
+  /* Remove bottom fade because Fitness is now visible */
+  .related-programs-list-mask.is-expanded::after {
+    opacity: 0;
+  }
+
+
+  /* Related cards slightly more compact */
+  .related-program-card {
+    min-height: 0;
+  }
+
+  .related-program-image {
+    height: 72px;
+  }
+
+  .related-program-card .card-body {
+    min-height: 48px;
+    padding: 7px 9px 8px;
+  }
+
+
+  /* Arrow sits BELOW the faded/card area */
+  .related-programs-more {
+    position: relative;
+    z-index: 2;
+    height: 42px;
+    margin-top: -2px;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+  }
+
+  .related-programs-more-button {
+    width: 44px;
+    height: 40px;
+    font-size: 2rem;
+  }
+
+  .related-programs-more-button i {
+    transition: transform 0.35s ease;
+  }
+
+  .related-programs-more-button.is-expanded i {
+    transform: rotate(180deg);
+  }
+}
+
+/* ==================================================
+   Tablet Program Details page
+================================================== */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+  /* Main spacing */
+  #main-content > .container-fluid {
+    padding-top: 25px;
+  }
+
+
+  /* Back to Programs */
+  .back-link {
+    width: auto;
+    height: auto;
+    margin: 0 0 26px;
+    align-items: center;
+    color: var(--color-blue);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+  .back-link:hover,
+  .back-link:focus-visible {
+    color: var(--color-blue-dark);
+  }
+
+
+  /* Page title */
+  .program-detail-title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+
+  /* Main 2-column layout */
+  .program-detail-layout {
+    --bs-gutter-x: 32px;
+
+    align-items: flex-start;
+  }
+
+
+  /* =========================
+     Left side
+  ========================= */
+
+  .program-detail-intro-section {
+    padding-top: 0;
+  }
+
+  .program-detail-hero-wrapper {
+    position: relative;
+  }
+
+  .program-detail-hero-image {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 10px;
+  }
+
+
+  /* Register button overlay */
+  .tablet-register-button {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    min-height: 42px;
+    margin: 0;
+    padding: 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+
+  /* =========================
+     Info cards
+  ========================= */
+
+  .program-information-section {
+    padding-top: 22px;
+  }
+
+  .program-information-section .row {
+    --bs-gutter-x: 12px;
+  }
+
+  .program-info-card {
+    min-height: 154px;
+    padding: 18px 6px 12px;
+    justify-content: flex-start;
+  }
+
+  .program-info-card i {
+    margin-bottom: 13px;
+    font-size: 2.5rem;
+  }
+
+  .program-info-card h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .program-info-card p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+
+  /* =========================
+     Description
+  ========================= */
+
+  .program-description-section {
+    padding-top: 18px;
+  }
+
+  .program-description-card {
+    min-height: 160px;
+    padding: 14px;
+  }
+
+  .program-description-card h2 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .program-description-card p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+
+  /* =========================
+     Related Programs
+  ========================= */
+
+  .related-programs-section {
+    padding-top: 0;
+    padding-bottom: 22px;
+  }
+
+  .related-programs-section h2 {
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .related-programs-section .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 18px;
+  }
+
+  .related-program-card {
+    width: 100%;
+    min-height: 138px;
+    border-radius: 10px;
+  }
+
+  .related-program-image {
+    width: calc(100% - 16px);
+    height: 72px;
+    margin: 8px 8px 0;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 6px;
+  }
+
+  .basketball-related-image {
+    object-position: center 20%;
+  }
+
+  .related-program-card .card-body {
+    min-height: 50px;
+    padding: 7px 9px 9px;
+    align-items: flex-start;
+  }
+
+  .related-program-card .card-title {
+    margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .related-program-card .card-text {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+
+  /* Down arrow */
+  .related-programs-more {
+    margin-top: 14px;
+    justify-content: center;
+  }
+
+  .related-programs-more-button {
+    display: inline-flex;
+    width: 42px;
+    height: 32px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-blue);
+    background: transparent;
+    border: 0;
+    font-size: 2rem;
+  }
+
+  .related-programs-more-button:hover,
+  .related-programs-more-button:focus-visible {
+    color: var(--color-blue-dark);
+  }
+
+  /* Space before footer */
+  .program-detail-layout {
+    padding-bottom: 0;
+  }
+
+  #main-content {
+    padding-bottom: 18px;
   }
 }
 

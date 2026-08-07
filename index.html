@@ -39,7 +39,7 @@
     crossorigin
   >
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap"
     rel="stylesheet"
  >
 </head>
@@ -53,7 +53,7 @@
   <!-- Header -->
   <header class="site-header">
     <nav
-      class="navbar navbar-expand-lg"
+      class="navbar navbar-expand-md"
       aria-label="Main navigation"
     >
       <div class="container-fluid px-4">
@@ -77,7 +77,7 @@
 
         <!-- Mobile menu button -->
         <button
-          class="navbar-toggler border-0 shadow-none shadow-none d-md-none"
+          class="navbar-toggler border-0 shadow-none d-md-none"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#mobile-navigation"
@@ -117,12 +117,12 @@
                         About
                     </a>
                 </li>
-                <li class="nav-item ms-lg-3">
-                    <a class="nav-link" href="#">
+                <li class="nav-item sign-in-item">
+                    <a class="btn btn-outline-primary sign-in-button" href="#">
                         Sign In
                     </a>
                 </li>
-                <li class="nav-item ms-lg-2">
+                <li class="nav-item register-item">
                     <a
                         class="btn register-button"
                         href="#"
@@ -354,7 +354,7 @@
 
         <div class="row g-3">
           <!-- Programs -->
-          <div class="col-6">
+          <div class="col-6 col-md-3">
             <a
               class="quick-link-card quick-link-programs"
               href="programs.html"
@@ -370,7 +370,7 @@
           </div>
 
           <!-- Facilities -->
-          <div class="col-6">
+          <div class="col-6 col-md-3">
             <a
               class="quick-link-card quick-link-facilities"
               href="#"
@@ -386,7 +386,7 @@
           </div>
 
           <!-- Schedules -->
-          <div class="col-6">
+          <div class="col-6 col-md-3">
             <a
               class="quick-link-card quick-link-schedules"
               href="#"
@@ -402,7 +402,7 @@
           </div>
 
           <!-- Register -->
-          <div class="col-6">
+          <div class="col-6 col-md-3">
             <a
               class="quick-link-card quick-link-register"
               href="#"
@@ -432,56 +432,61 @@
 
         <div class="row g-3">
           <!-- Soccer program -->
-          <div class="col-12">
-            <article class="card program-card">
-              <div class="row g-0 align-items-center">
-                <div class="col-auto">
-                  <img
-                    src="images/soccer-small.png"
-                    srcset="
-                      images/soccer-small.png 400w,
-                      images/soccer-large.png 800w
-                    "
-                    sizes="96px"
-                    class="program-image"
-                    alt="Children playing soccer outdoors"
-                  >
-                </div>
+          <div class="col-12 d-md-none">
+            <a
+              href="program-details.html"
+              class="program-card-link"
+              aria-label="View Intro to Soccer program details"
+            >
+              <article class="card program-card">
+                <div class="row g-0 align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="images/soccer-small.png"
+                      srcset="
+                        images/soccer-small.png 400w,
+                        images/soccer-large.png 800w
+                      "
+                      sizes="96px"
+                      class="program-image"
+                      alt="Children playing soccer outdoors"
+                    >
+                  </div>
 
-                <div class="col">
-                  <div class="card-body">
-                    <h3 class="card-title">
-                      Intro to Soccer
-                    </h3>
+                  <div class="col">
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        Intro to Soccer
+                      </h3>
 
-                    <p class="program-age">
-                      Age 6 - 8
-                    </p>
+                      <p class="program-age">
+                        Age 6 - 8
+                      </p>
 
-                    <p class="card-text">
-                      Learn the basics and have fun!
-                    </p>
+                      <p class="card-text">
+                        Learn the basics and have fun!
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-auto">
+                    <a
+                      class="program-arrow"
+                      href="program-details.html"
+                      aria-label="View Intro to Soccer program details"
+                    >
+                      <i
+                        class="fa-solid fa-chevron-right"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
                   </div>
                 </div>
-
-                <div class="col-auto">
-                  <a
-                    class="program-arrow"
-                    href="program-details.html"
-                    aria-label="View Intro to Soccer program details"
-                  >
-                    <i
-                      class="fa-solid fa-chevron-right"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </article>
+              </article>
           </div>
 
           <!-- Swimming program -->
-          <div class="col-12">
+          <div class="col-12 d-md-none">
             <article class="card program-card">
               <div class="row g-0 align-items-center">
                 <div class="col-auto">
@@ -528,9 +533,102 @@
               </div>
             </article>
           </div>
+          <!-- Tablet Soccer -->
+          <div class="col-md-3 d-none d-md-block">
+            <a
+              href="program-details.html"
+              class="program-card-link"
+              aria-label="View Intro to Soccer program details"
+            >  
+              <article class="card home-program-card h-100">
+                <img
+                  src="images/soccer-large.png"
+                  srcset="
+                    images/soccer-small.png 400w,
+                    images/soccer-large.png 800w
+                  "
+                  sizes="25vw"
+                  class="home-program-image"
+                  alt="Children playing soccer outdoors"
+                >
+
+                <div class="home-program-overlay">
+                  <h3>Intro to Soccer</h3>
+
+                  <p>
+                    <i
+                      class="fa-regular fa-user"
+                      aria-hidden="true"
+                    ></i>
+                    6 - 8
+                  </p>
+
+                  <p>
+                    <i
+                      class="fa-solid fa-location-dot"
+                      aria-hidden="true"
+                    ></i>
+                    City Sports Field
+                  </p>
+
+                  <p>
+                    <i
+                      class="fa-solid fa-calendar-days"
+                      aria-hidden="true"
+                    ></i>
+                    Sat 10:00 AM
+                  </p>
+                </div>
+              </article>
+            </a>
+          </div>
+
+          <!-- Tablet Swimming -->
+          <div class="col-md-3 d-none d-md-block">
+            <article class="card home-program-card h-100">
+              <img
+                src="images/swimming-large.png"
+                srcset="
+                  images/swimming-small.png 400w,
+                  images/swimming-large.png 800w
+                "
+                sizes="25vw"
+                class="home-program-image"
+                alt="Children attending a swimming lesson"
+              >
+
+              <div class="home-program-overlay">
+                <h3>Swim Lessons</h3>
+
+                <p>
+                  <i
+                    class="fa-regular fa-user"
+                    aria-hidden="true"
+                  ></i>
+                  4+
+                </p>
+
+                <p>
+                  <i
+                    class="fa-solid fa-location-dot"
+                    aria-hidden="true"
+                  ></i>
+                  Ottawa Rec Centre
+                </p>
+
+                <p>
+                  <i
+                    class="fa-solid fa-calendar-days"
+                    aria-hidden="true"
+                  ></i>
+                  Tue 5:30 PM
+                </p>
+              </div>
+            </article>
+          </div>
           <!-- Basketball program -->
           <div class="col-12 col-md-3 d-none d-md-block">
-            <article class="card program-card home-program-card h-100">
+            <article class="card home-program-card h-100">
               <img
                 src="images/basketball-small.png"
                 srcset="
@@ -565,7 +663,7 @@
 
           <!-- Dance program -->
           <div class="col-12 col-md-3 d-none d-md-block">
-            <article class="card program-card home-program-card h-100">
+            <article class="card home-program-card h-100">
               <img
                 src="images/dance-small.png"
                 srcset="
@@ -605,37 +703,86 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container-fluid px-4">
-      <div class="row text-center g-3">
+
+      <div class="row g-3">
+
+        <!-- Tablet footer brand -->
+        <div class="col-12 col-md-3 footer-brand-area">
+          <div class="footer-brand">
+            <img
+              src="images/logo-100.png"
+              srcset="
+                images/logo-100.png 1x,
+                images/logo-200.png 2x
+              "
+              class="footer-logo"
+              alt=""
+            >
+
+            <span class="footer-brand-name">
+              Ottawa<br>
+              Recreation
+            </span>
+          </div>
+
+          <p class="footer-description">
+            Connecting our community<br>
+            through recreation.
+          </p>
+        </div>
+
         <!-- Explore -->
-        <div class="col-4">
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
             Explore
           </h2>
 
           <ul class="footer-links list-unstyled">
             <li>
-              <a href="#">Help</a>
+              <a href="programs.html">
+                Activities &amp; Programs
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Facilities
+              </a>
             </li>
           </ul>
         </div>
 
         <!-- Support -->
-        <div class="col-4">
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
             Support
           </h2>
 
           <ul class="footer-links list-unstyled">
             <li>
-              <a href="#">Registration Info</a>
+              <a href="#">
+                FAQs
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Contact Us
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                Registration Info
+              </a>
             </li>
           </ul>
         </div>
 
-        <!-- Contact -->
-        <div class="col-4">
+        <!-- Connect -->
+        <div class="col-4 col-md-3 footer-column">
           <h2 class="footer-heading">
-            Contact
+            Connect
           </h2>
 
           <div class="social-links">
@@ -670,11 +817,13 @@
             </a>
           </div>
         </div>
+
       </div>
 
       <p class="copyright">
         &copy; City of Ottawa
       </p>
+
     </div>
   </footer>
 
