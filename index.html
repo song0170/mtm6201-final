@@ -426,63 +426,77 @@
       aria-labelledby="popular-programs-title"
     >
       <div class="container-fluid px-4">
-        <h2 id="popular-programs-title">
-          Popular Programs
-        </h2>
+
+        <div class="popular-programs-heading">
+          <h2 id="popular-programs-title">
+            Popular Programs
+          </h2>
+
+          <a
+            class="view-all-programs d-none d-lg-inline-flex"
+            href="programs.html"
+          >
+            View All Programs
+          </a>
+        </div>
 
         <div class="row g-3">
           <!-- Soccer program -->
           <div class="col-12 d-md-none">
-            <a
-              href="program-details.html"
-              class="program-card-link"
-              aria-label="View Intro to Soccer program details"
-            >
-              <article class="card program-card">
-                <div class="row g-0 align-items-center">
-                  <div class="col-auto">
-                    <img
-                      src="images/soccer-small.png"
-                      srcset="
-                        images/soccer-small.png 400w,
-                        images/soccer-large.png 800w
-                      "
-                      sizes="96px"
-                      class="program-image"
-                      alt="Children playing soccer outdoors"
-                    >
-                  </div>
 
-                  <div class="col">
-                    <div class="card-body">
-                      <h3 class="card-title">
+            <article class="card program-card position-relative">
+
+              <div class="row g-0 align-items-center">
+
+                <div class="col-auto">
+                  <img
+                    src="images/soccer-small.png"
+                    srcset="
+                      images/soccer-small.png 400w,
+                      images/soccer-large.png 800w
+                    "
+                    sizes="96px"
+                    class="program-image"
+                    alt="Children playing soccer outdoors"
+                  >
+                </div>
+
+                <div class="col">
+                  <div class="card-body">
+
+                    <h3 class="card-title">
+                      <a
+                        href="program-details.html"
+                        class="stretched-link text-reset text-decoration-none"
+                      >
                         Intro to Soccer
-                      </h3>
+                      </a>
+                    </h3>
 
-                      <p class="program-age">
-                        Age 6 - 8
-                      </p>
+                    <p class="program-age">
+                      Age 6 - 8
+                    </p>
 
-                      <p class="card-text">
-                        Learn the basics and have fun!
-                      </p>
-                    </div>
-                  </div>
+                    <p class="card-text">
+                      Learn the basics and have fun!
+                    </p>
 
-                  <div class="col-auto">
-                    <a
-                      class="program-arrow"
-                      href="program-details.html"
-                      aria-label="View Intro to Soccer program details"
-                    >
-                      <i
-                        class="fa-solid fa-chevron-right"
-                        aria-hidden="true"
-                      ></i>
-                    </a>
                   </div>
                 </div>
-              </article>
+
+                <div class="col-auto">
+                  <span class="program-arrow">
+                    <i
+                      class="fa-solid fa-chevron-right"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </div>
+
+              </div>
+
+            </article>
+
           </div>
 
           <!-- Swimming program -->
@@ -534,7 +548,7 @@
             </article>
           </div>
           <!-- Tablet Soccer -->
-          <div class="col-md-3 d-none d-md-block">
+          <div class="col-md-3 col-lg d-none d-md-block">
             <a
               href="program-details.html"
               class="program-card-link"
@@ -578,13 +592,21 @@
                     ></i>
                     Sat 10:00 AM
                   </p>
+
+                <span
+                  class="home-program-arrow d-none d-lg-flex"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
                 </div>
               </article>
             </a>
           </div>
 
           <!-- Tablet Swimming -->
-          <div class="col-md-3 d-none d-md-block">
+          <div class="col-md-3 col-lg d-none d-md-block">
             <article class="card home-program-card h-100">
               <img
                 src="images/swimming-large.png"
@@ -623,11 +645,19 @@
                   ></i>
                   Tue 5:30 PM
                 </p>
+
+                <span
+                  class="home-program-arrow d-none d-lg-flex"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
               </div>
             </article>
           </div>
           <!-- Basketball program -->
-          <div class="col-12 col-md-3 d-none d-md-block">
+          <div class="col-12 col-md-3 col-lg d-none d-md-block">
             <article class="card home-program-card h-100">
               <img
                 src="images/basketball-small.png"
@@ -657,12 +687,20 @@
                   <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
                   Wed 6:00 PM
                 </p>
+
+                <span
+                  class="home-program-arrow d-none d-lg-flex"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
               </div>
             </article>
           </div>
 
           <!-- Dance program -->
-          <div class="col-12 col-md-3 d-none d-md-block">
+          <div class="col-12 col-md-3 col-lg d-none d-md-block">
             <article class="card home-program-card h-100">
               <img
                 src="images/dance-small.png"
@@ -692,8 +730,73 @@
                   <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
                   Thu 1:00 PM
                 </p>
+                
+                <span
+                  class="home-program-arrow d-none d-lg-flex"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
               </div>
             </article>
+          </div>
+
+          <!-- Yoga - Desktop only -->
+          <div class="col-lg d-none d-lg-block">
+
+            <article class="card home-program-card h-100">
+
+              <img
+                src="images/yoga-large.png"
+                srcset="
+                  images/yoga-small.png 400w,
+                  images/yoga-large.png 800w
+                "
+                sizes="20vw"
+                class="home-program-image"
+                alt="People participating in a yoga class"
+              >
+
+              <div class="home-program-overlay">
+
+                <h3>Yoga</h3>
+
+                <p>
+                  <i
+                    class="fa-regular fa-user"
+                    aria-hidden="true"
+                  ></i>
+                  18+
+                </p>
+
+                <p>
+                  <i
+                    class="fa-solid fa-location-dot"
+                    aria-hidden="true"
+                  ></i>
+                  Ottawa Rec Centre
+                </p>
+
+                <p>
+                  <i
+                    class="fa-solid fa-calendar-days"
+                    aria-hidden="true"
+                  ></i>
+                  Mon 7:00 PM
+                </p>
+
+                <span
+                  class="home-program-arrow d-none d-lg-flex"
+                  aria-hidden="true"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </span>
+
+              </div>
+
+            </article>
+
           </div>
         </div>
       </div>

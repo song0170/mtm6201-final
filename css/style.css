@@ -1059,10 +1059,6 @@ button:focus-visible,
   border-radius: 10px;
 }
 
-.program-description-card:hover,
-.program-description-card:focus-within {
-  background-color: #aeb8bf;
-}
 
 .program-description-card h2 {
   margin-bottom: 2px;
@@ -1171,6 +1167,76 @@ button:focus-visible,
   color: #b4c2cc;
 }
 
+/* ==================================================
+   Mobile Hero overlay + bottom fade
+================================================== */
+
+@media (max-width: 767.98px) {
+
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Dark overlay over hero image */
+  .hero-overlay {
+    position: relative;
+    z-index: 1;
+
+    background: transparent;
+  }
+
+  .hero-overlay .col-12 {
+    width: calc(100% - 40px);
+    max-width: none;
+
+    margin-inline: auto;
+
+    padding: 12px 14px 14px;
+
+    background-color: rgba(0, 0, 0, 0.30);
+  }
+
+  /* Keep hero text above the fade */
+  .hero-overlay .container-fluid {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* White opacity gradient at bottom of hero */
+  .hero-section::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 2;
+
+    height: 85px;
+
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.35) 38%,
+        rgba(255, 255, 255, 0.82) 72%,
+        #ffffff 100%
+      );
+  }
+
+  /* Search overlaps the fading bottom edge */
+  .search-section {
+    position: relative;
+    z-index: 10;
+
+    margin-top: -34px;
+  }
+}
+
 
 /* ==================================================
    Small mobile adjustment
@@ -1256,7 +1322,7 @@ button:focus-visible,
 
 .social-links {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 7px;
 }
 
@@ -2040,6 +2106,7 @@ button:focus-visible,
     font-size: 14px;
     font-weight: 400;
     line-height: 1.2;
+    white-space: nowrap;
   }
 
   .back-link:hover,
@@ -2259,24 +2326,1015 @@ button:focus-visible,
 ================================================== */
 
 @media (min-width: 992px) {
-  .program-detail-intro-section h1 {
+
+  :root {
+    --page-padding: 44px;
+  }
+
+
+  /* ==================================================
+     Desktop Header
+  ================================================== */
+
+  .site-header,
+  .site-header .navbar {
+    height: 96px;
+  }
+
+  .site-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .navbar-brand {
+    gap: 14px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  .navbar-nav {
+    gap: 46px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-nav .btn {
+    width: 158px;
+    height: 36px;
+    min-height: 36px;
+    font-size: 14px;
+  }
+
+  .sign-in-item {
+    margin-left: 22px;
+    margin-right: -34px;
+  }
+
+
+  /* ==================================================
+     Desktop Homepage Hero
+  ================================================== */
+
+  .hero-section {
+    min-height: 294px;
+    position: relative;
+    color: var(--color-white);
+    background-image: url("../images/hero-large.png");
+    background-position: center 42%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Desktop bottom opacity gradient */
+  .hero-section::after {
+    content: "";
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 2;
+
+    height: 70px;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.28) 38%,
+      rgba(255, 255, 255, 0.72) 72%,
+      #ffffff 100%
+    );
+  }
+
+  /* Remove tablet split-image version */
+  .hero-section::before {
+    display: none;
+  }
+
+  .hero-overlay {
+    min-height: 294px;
+    padding-top: 22px;
+    padding-bottom: 20px;
+    align-items: flex-start;
+    background: transparent;
+  }
+
+  .hero-overlay .container-fluid {
+    height: 100%;
+    position: relative;
+    z-index: 4;
+  }
+
+  .hero-overlay .row {
+    min-height: 250px;
+    align-items: flex-start;
+  }
+
+  .hero-overlay .col-12 {
+    width: auto;
+    max-width: 520px;
+    margin-top: 0;
+    margin-left: 16px;
+    padding: 20px 30px 18px;
+    background-color: rgba(0, 0, 0, 0.42);
+  }
+
+  .hero-section h1 {
+    max-width: 470px;
+    margin-bottom: 12px;
+    color: var(--color-white);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .hero-section p {
+    max-width: 455px;
+    margin-bottom: 8px;
+    color: var(--color-white);
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .hero-button {
+    width: 220px;
+    min-height: 47px;
+    padding: 0;
+    font-size: 20px;
+    position: relative;
+    z-index: 6;
+  }
+
+
+  /* ==================================================
+     Desktop Search
+  ================================================== */
+
+  .search-section {
+    z-index: 10;
+    margin-top: -11px;
+    margin-bottom: 24px;
+  }
+
+  .search-form {
+    width: 58%;
+    margin: 0;
+  }
+
+  .search-form .input-group,
+  .search-form .input-group-text,
+  .search-form .form-control {
+    height: 38px;
+  }
+
+  .search-form .input-group-text {
+    font-size: 1.25rem;
+  }
+
+  .search-form .form-control {
+    font-size: 14px;
+  }
+
+
+  /* ==================================================
+   Desktop Quick Links
+  ================================================== */
+
+  .quick-links-section {
+    padding-bottom: 28px;
+  }
+
+  .quick-links-section h2 {
+    display: none;
+  }
+
+  .quick-links-section .row {
+    --bs-gutter-x: 18px;
+    --bs-gutter-y: 0;
+  }
+
+  .quick-link-card {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    grid-template-rows: auto auto;
+
+    width: 100%;
+    height: 80px;
+    min-height: 80px;
+    padding: 12px 18px;
+
+    column-gap: 14px;
+    row-gap: 2px;
+
+    align-content: center;
+    align-items: center;
+
+    text-align: left;
+  }
+
+  .quick-link-card i {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    width: 52px;
+    margin: 0;
+
+    align-self: center;
+
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .quick-link-title {
+    grid-column: 2;
+    grid-row: 1;
+
+    align-self: end;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .quick-link-description {
+    display: block;
+
+    grid-column: 2;
+    grid-row: 2;
+
+    max-width: none;
+    margin: 0;
+
+    align-self: start;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
+
+  /* ==================================================
+     Desktop Popular Programs
+  ================================================== */
+
+  .popular-programs-section {
+    padding-bottom: 30px;
+  }
+
+  .popular-programs-heading {
+    display: flex;
+    margin-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .popular-programs-section h2 {
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .view-all-programs {
+    align-items: center;
+    color: var(--color-blue);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .view-all-programs:hover,
+  .view-all-programs:focus-visible {
+    color: var(--color-blue-dark);
+  }
+
+  .popular-programs-section .row {
+    --bs-gutter-x: 14px;
+    --bs-gutter-y: 0;
+  }
+
+  .home-program-card {
+    width: 100%;
+    height: 160px;
+    min-height: 160px;
+    border-radius: 7px;
+  }
+
+  .home-program-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .home-program-overlay {
+    padding: 48px 10px 7px;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.82)
+      );
+  }
+
+  .home-program-overlay h3 {
+    margin-bottom: 4px;
+    padding-right: 20px;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .home-program-overlay p {
+    margin-bottom: 1px;
+    font-size: 12px;
+    line-height: 1.15;
+  }
+
+  .home-program-overlay i {
+    width: 14px;
+  }
+
+  .home-program-arrow {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    width: 24px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.4rem;
+    transform: translateY(-50%);
+  }
+
+  /* ==================================================
+   Desktop Activities & Programs
+  ================================================== */
+
+  /* Page intro */
+  .programs-intro-section {
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .programs-intro-section h1 {
+    margin-bottom: 8px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .programs-intro-text {
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+
+
+  /* Search + Filter */
+  .programs-search-row {
+    --bs-gutter-x: 18px;
+    margin-bottom: 5px;
+  }
+
+  .program-search-form .input-group,
+  .program-search-form .input-group-text,
+  .program-search-form .form-control {
+    height: 36px;
+  }
+
+  .program-search-form .input-group {
+    overflow: hidden;
+    border: 1px solid var(--color-blue);
+    border-radius: 10px;
+  }
+
+  .program-search-form .input-group-text {
+    order: 2;
+    padding-right: 12px;
+    padding-left: 8px;
+    color: var(--color-blue);
+    background-color: var(--color-white);
+    border-left: 0;
+    border-radius: 0;
+    font-size: 1.15rem;
+  }
+
+  .program-search-form .form-control {
+    order: 1;
+    border: 0;
+    border-radius: 0;
+    font-size: 13px;
+    box-shadow: none;
+  }
+
+  .tablet-filter-button {
+    height: 36px;
+    min-height: 36px;
+    font-size: 16px;
+  }
+
+
+  /* Filter dropdown row */
+  .tablet-program-filters {
+    padding-top: 0;
+    padding-bottom: 22px;
+  }
+
+  .tablet-filter-options {
+    gap: 22px;
+  }
+
+  .tablet-filter-select {
+    height: 34px;
+    font-size: 16px;
+  }
+
+  #tablet-age-filter {
+    width: 130px;
+  }
+
+  #tablet-category-filter {
+    width: 160px;
+  }
+
+  #tablet-location-filter {
+    width: 145px;
+  }
+
+  #tablet-day-filter {
+    width: 130px;
+  }
+
+
+  /* Results / View controls */
+  .program-results-controls {
+    padding-top: 24px;
+    padding-bottom: 18px;
+  }
+
+  .program-result-count {
+    font-size: 14px;
+  }
+
+  .program-view-options {
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .program-view-button {
+    width: 28px;
+    height: 28px;
+    font-size: 1.35rem;
+  }
+
+
+  /* Program cards */
+  .program-list-section {
+    padding-bottom: 15px;
+  }
+
+  .program-list-section > .container-fluid > .row {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 18px;
+  }
+
+  .program-list-section .col-md-6 {
+    width: 33.333333%;
+  }
+
+  .program-list-card {
+    height: 132px;
+    min-height: 132px;
+  }
+
+  .program-list-card > .row {
+    height: 132px;
+    min-height: 132px;
+  }
+
+  .program-list-image {
+    width: 138px;
+    height: 108px;
+    margin-left: 10px;
+    margin-top:0;
+    margin-bottom: 0;
+    position: relative;
+    top: 5px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .program-list-card > .row {
+    height: 132px;
+    min-height: 132px;
+    align-items: center;
+  }
+
+  .program-list-card .card-body {
+    padding: 10px 8px 8px 12px;
+  }
+
+  .program-list-card .card-title {
+    margin-bottom: 6px;
+    font-size: 18px;
+  }
+
+  .program-details-list li {
+    min-height: 25px;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .program-details-list i {
+    width: 15px;
+    min-width: 15px;
+    font-size: 0.85rem;
+  }
+
+
+  /* Pagination */
+  .program-pagination {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    gap: 14px;
+  }
+
+  .pagination-number,
+  .pagination-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+
+  /* ==================================================
+     Desktop Footer
+  ================================================== */
+
+  .site-footer {
+    min-height: 127px;
+    padding: 20px 0 10px;
+  }
+
+  .site-footer .row {
+    --bs-gutter-x: 20px;
+  }
+
+  .footer-logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .footer-brand {
+    gap: 12px;
+  }
+
+  .footer-brand-name {
+    font-size: 16px;
+  }
+
+  .footer-description {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .footer-heading {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .social-links {
+    gap: 13px;
+  }
+
+  .social-links a {
+    font-size: 1.65rem;
+  }
+
+  .copyright {
+    margin-top: 0;
+    font-size: 8px;
+  }
+
+
+  /* ==================================================
+   Desktop Program Details
+  ================================================== */
+
+  /* Main top spacing */
+  #main-content > .container-fluid {
+    padding-top: 26px;
+  }
+
+
+  /* Back to Programs */
+  .back-link {
+    width: auto;
+    height: auto;
+
+    margin: 0 0 28px;
+
+    align-items: center;
+
+    color: var(--color-blue);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    white-space: nowrap;
+  }
+
+  .back-link:hover,
+  .back-link:focus-visible {
+    color: var(--color-blue-dark);
+  }
+
+
+  /* Page title */
+  .program-detail-title {
+    margin-bottom: 24px;
+
     font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+
+  /* ==================================================
+    Main two-column layout
+  ================================================== */
+
+  .program-detail-layout {
+    --bs-gutter-x: 28px;
+
+    align-items: stretch;
+    padding-bottom: 28px;
+  }
+
+
+  /* Left column */
+  .program-detail-layout > .col-md-8 {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  /* Right column */
+  .program-detail-layout > .col-md-4 {
+    display: flex;
+  }
+
+
+  /* ==================================================
+    Hero
+  ================================================== */
+
+  .program-detail-intro-section {
+    padding-top: 0;
+  }
+
+  .program-detail-hero-wrapper {
+    position: relative;
   }
 
   .program-detail-hero-image {
-    height: 420px;
+    width: 100%;
+    height: auto;
+
+    object-fit: initial;
+    object-position: initial;
+
+    border-radius: 10px;
+  }
+
+
+  /* Register button INSIDE image */
+  .tablet-register-button {
+    position: absolute;
+
+    right: 18px;
+    bottom: 18px;
+
+    min-height: 46px;
+
+    margin: 0;
+    padding: 0 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+
+  /* ==================================================
+    Program information cards
+  ================================================== */
+
+  .program-information-section {
+    padding-top: 20px;
+  }
+
+  .program-information-section .row {
+    --bs-gutter-x: 14px;
   }
 
   .program-info-card {
-    min-height: 170px;
+    display: flex;
+
+    min-height: 180px;
+    padding: 20px 8px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
   }
 
+  .program-information-section .col-3 {
+    display: flex;
+  }
+
+  .program-information-section .col-3 .program-info-card {
+    width: 100%;
+  }
+
+
+  /* Icons */
   .program-info-card i {
-    font-size: 2.8rem;
+    margin: 0 0 10px;
+
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+
+  /* Titles */
+  .program-info-card h3 {
+    margin: 0 0 8px;
+
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+
+  /* Values */
+  .program-info-card p {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+
+  /* ==================================================
+    Description
+  ================================================== */
+
+  .program-description-section {
+    padding-top: 18px;
+  }
+
+  .program-description-card {
+    min-height: 116px;
+    padding: 14px 18px;
+  }
+
+  .program-description-card h2 {
+    margin-bottom: 5px;
+
+    font-size: 22px;
+  }
+
+  .program-description-card p {
+    margin-bottom: 0;
+
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+
+  /* ==================================================
+    Related Programs
+  ================================================== */
+
+  .related-programs-section {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    padding-top: 0;
+    padding-bottom: 0;
+
+    flex-direction: column;
+  }
+
+  .related-programs-section h2 {
+    flex: 0 0 auto;
+
+    margin-bottom: 12px;
+
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+
+  /* Shell stretches to same bottom as left column */
+  .related-programs-scroll-shell {
+    position: relative;
+
+    flex: 1 1 auto;
+
+    width: 100%;
+    min-height: 0;
+    height: auto;
+  }
+
+
+  /* Actual scrolling area */
+  .related-programs-list-mask {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding-right: 12px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color: #aeb8bf transparent;
+    scrollbar-gutter: stable;
+  }
+
+
+  /* Cancel tablet slide animation */
+  .related-programs-list-mask .row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 16px;
+
+    position: relative;
+
+    transform: none !important;
+  }
+
+
+  /* Related cards */
+  .related-program-card {
+    min-height: 0;
+
+    border-radius: 10px;
   }
 
   .related-program-image {
-    height: 150px;
+    width: calc(100% - 16px);
+    height: 120px;
+
+    margin: 8px 8px 0;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+  }
+
+  .related-program-card .card-body {
+    min-height: 58px;
+
+    padding: 8px 10px 10px;
+
+    align-items: flex-start;
+  }
+
+  .related-program-card .card-title {
+    margin-bottom: 2px;
+
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .related-program-card .card-text {
+    margin-bottom: 0;
+
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  /* Disable old tablet fades on desktop */
+  .related-programs-list-mask::before,
+  .related-programs-list-mask::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* ==================================================
+    Related Programs fades
+  ================================================== */
+
+  .related-programs-scroll-shell::before,
+  .related-programs-scroll-shell::after {
+    content: "";
+
+    position: absolute;
+    right: 16px;
+    left: 0;
+
+    z-index: 5;
+
+    height: 78px;
+
+    pointer-events: none;
+  }
+
+
+  /* Top fade after scrolling */
+  .related-programs-scroll-shell::before {
+    top: 0;
+
+    height: 105px;
+
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.9) 28%,
+      rgba(255, 255, 255, 0.55) 58%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+  }
+
+
+  /* Bottom fade while more cards remain */
+  .related-programs-scroll-shell::after {
+    bottom: 0;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 65%,
+      #ffffff 100%
+    );
+
+    opacity: 1;
+
+    transition: opacity 0.2s ease;
+  }
+
+  .related-programs-scroll-shell.has-scrolled::before {
+    opacity: 1;
+  }
+
+  /* At the very bottom, remove BOTH fades */
+  .related-programs-scroll-shell.at-bottom::before,
+  .related-programs-scroll-shell.at-bottom::after {
+    opacity: 0 !important;
+  }
+
+  /* Scrollbar */
+  .related-programs-list-mask::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .related-programs-list-mask::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .related-programs-list-mask::-webkit-scrollbar-thumb {
+    background-color: #aeb8bf;
+    border-radius: 999px;
+  }
+
+  .related-programs-list-mask::-webkit-scrollbar-thumb:hover {
+    background-color: #84939a;
+  }
+
+  /* Tablet arrow not used on desktop */
+  .related-programs-more {
+    display: none !important;
   }
 }
-
