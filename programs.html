@@ -161,6 +161,8 @@
     class="offcanvas offcanvas-end mobile-menu"
     tabindex="-1"
     id="mobile-navigation"
+    role="dialog"
+    aria-modal="true"
     aria-labelledby="mobile-navigation-title"
   >
     <div class="offcanvas-header">
@@ -1030,7 +1032,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
     <!-- Tablet pagination -->
     <nav
@@ -1038,17 +1039,16 @@
       aria-label="Programs pagination"
     >
 
-      <a
+      <span
         class="pagination-arrow disabled"
-        href="#"
-        aria-label="Previous page"
-        aria-disabled="true"
+        aria-hidden="true"
       >
+
         <i
           class="fa-solid fa-chevron-left"
           aria-hidden="true"
         ></i>
-      </a>
+      </span>
 
       <a
         class="pagination-number active"

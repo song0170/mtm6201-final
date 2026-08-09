@@ -160,6 +160,8 @@
     class="offcanvas offcanvas-end mobile-menu"
     tabindex="-1"
     id="mobile-navigation"
+    role="dialog"
+    aria-modal="true"
     aria-labelledby="mobile-navigation-title"
   >
     <div class="offcanvas-header">
@@ -344,9 +346,8 @@
         <div class="col-12 col-md-8">
 
           <!-- Program hero -->
-          <section
+          <div
             class="program-detail-intro-section"
-            aria-labelledby="program-detail-title"
           >
             <div class="program-detail-hero-wrapper">
 
@@ -372,7 +373,7 @@
               </a>
 
             </div>
-          </section>
+          </div>
 
 
           <!-- Program information -->
@@ -458,9 +459,8 @@
 
 
           <!-- Description -->
-          <section
+          <div
             class="program-description-section"
-            aria-labelledby="program-description-title"
           >
 
             <article class="program-description-card">
@@ -486,7 +486,7 @@
               Register Now
             </a>
 
-          </section>
+          </div>
 
         </div>
 
@@ -704,23 +704,6 @@
         
             </div>
 
-            <div class="related-programs-more d-none d-md-flex">
-
-              <button
-                class="related-programs-more-button"
-                id="related-programs-toggle"
-                type="button"
-                aria-label="Show more related programs"
-                aria-expanded="false"
-              >
-                <i
-                  class="fa-solid fa-chevron-down"
-                  aria-hidden="true"
-                ></i>
-              </button>
-
-            </div>
-
           </section>
 
         </div>
@@ -887,52 +870,6 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   ></script>
 
-  <script>
-    const relatedProgramsScroll =
-      document.querySelector(".related-programs-list-mask");
-
-    const relatedProgramsShell =
-      document.querySelector(".related-programs-scroll-shell");
-
-    function updateRelatedProgramsFade() {
-      if (!relatedProgramsScroll || !relatedProgramsShell) {
-        return;
-      }
-
-      const scrollTop = relatedProgramsScroll.scrollTop;
-
-      const remainingScroll =
-        relatedProgramsScroll.scrollHeight -
-        relatedProgramsScroll.clientHeight -
-        scrollTop;
-
-      /* Top fade appears after scrolling */
-      relatedProgramsShell.classList.toggle(
-        "has-scrolled",
-        scrollTop > 5
-      );
-
-      /* Bottom fade disappears at the end */
-      relatedProgramsShell.classList.toggle(
-        "at-bottom",
-        remainingScroll <= 5
-      );
-    }
-
-    if (relatedProgramsScroll && relatedProgramsShell) {
-      relatedProgramsScroll.addEventListener(
-        "scroll",
-        updateRelatedProgramsFade
-      );
-
-      window.addEventListener(
-        "resize",
-        updateRelatedProgramsFade
-      );
-
-      updateRelatedProgramsFade();
-    }
-  </script>
   </body>
 
 </html>
