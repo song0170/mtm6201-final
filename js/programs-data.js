@@ -102,3 +102,10 @@ const programs = [
     description: "Fitness is a high-energy, results-driven program that combines cardio, strength training, and team-building exercises. Perfect for those looking to improve their fitness and meet new people."
   },
 ];
+
+function shortDay(day) {
+  if (day === "Daily") {
+    return day;
+  }
+  return day.slice(0, 3);
+}

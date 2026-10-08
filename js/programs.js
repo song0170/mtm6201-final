@@ -54,13 +54,6 @@ function createProgramCard(program) {
   `;
 }
 
-function shortDay(day) {
-  if (day === "Daily") {
-    return day;
-  }
-  return day.slice(0, 3);
-}
-
 programs.forEach(function (program) {
   programList.insertAdjacentHTML("beforeend", createProgramCard(program));
 });
